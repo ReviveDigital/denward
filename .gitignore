@@ -1,0 +1,19 @@
+# Keep these files out of the repo
+/wp-content/themes/twenty*
+/wp-content/languages/plugins/*
+/wp-content/languages/themes/twenty*
+/wp-content/upgrade
+/wp-content/uploads
+/wp-content/plugins
+/wp-content/cache
+/sitemap.*
+/wp-config.php
+*.sql
+# Hidden files
+*.DS_Store
+*Thumbs.db
+*.sass-cache*
+*~imageoptim*
+# Dev stuff
+node_modules/
+.npmrc

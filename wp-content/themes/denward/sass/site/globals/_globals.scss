@@ -1,0 +1,19 @@
+$font__main: 'proxima-nova', sans-serif;
+
+%link {
+    transition: all .2s ease-in-out;
+	&:hover {
+		text-decoration:none;
+	}
+}
+// Product filter mobile
+body.no-scroll {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+}
+// Hide grouped product add to cart button
+a.product-type-grouped {
+  display: none !important;
+}

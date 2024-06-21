@@ -1,0 +1,84 @@
+.cta {
+    padding: 50px 0;
+    background: $color__primary--green;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+        padding: 80px 0;
+    }
+    @include e('container') {
+        @include make-flex($justify:flex-end);
+    }
+    @include e('block') {
+        @include make-col(12);
+        z-index: 111;
+        @include media-breakpoint-up(lg) {
+            @include make-col(8.2);
+        }
+    }
+    @include e('title') {
+        @include heading($color__white,$line-height: 1);
+        font-size: 28px;
+        @include media-breakpoint-up(lg) {
+            font-size: 40px;
+        }
+    }
+    @include e('row') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('col') {
+        @include make-col(12);
+        @include media-breakpoint-up(md) {
+            @include make-col(2.9);
+            align-self: center;
+        }
+    }
+    @include e('buttons') {
+        @include make-col(12);
+        margin-top: 20px;
+        @include media-breakpoint-up(md) {
+            @include make-col(8.9);
+            margin-top: 0;
+            align-self: center;
+        }
+    }
+    @include e('phone') {
+        @include font($color__white,$line-height: 1.2,$margin-bottom: 0);
+        font-size: 17px;
+    }
+    @include e('opacity') {
+        opacity: 0.4;
+    }
+    @include e('link') {
+        @extend %link;
+        font-weight: 600;
+        font-size: 23px;
+        color: $color__white;
+        display: block;
+        &:hover {
+            color: $color__white;
+        }
+    }
+    @include e('white') {
+        @include button($color__white);
+        color: $color__primary--green;
+        margin-right: 7px;
+        &:hover {
+            color: $color__white;
+            background: $color__primary--blue;
+        }
+    }
+    @include e('btn') {
+        @include button(transparent);
+        border: 2px solid $color__white;
+        @include media-breakpoint-down(sm) {
+            padding: 15px 25px;
+        }
+        &:hover {
+            background: $color__white;
+            color: $color__primary--green;
+        }
+    }
+}

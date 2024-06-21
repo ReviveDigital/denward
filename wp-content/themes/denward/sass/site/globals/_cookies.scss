@@ -1,0 +1,28 @@
+.cookiebar {
+    background: #0a1344;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 1111;
+    left: 0;
+    right: 0;
+    color: $color__white;
+    @include e('text') {
+        @include font($color__white);
+    }
+    @include e('btn') {
+        // @include font();
+        @include button();
+        padding: 7px 20px;
+    }
+    @include e('icon') {
+        font-size: 12px;
+        vertical-align: middle;
+        transition: all .2s ease-in-out;
+
+    }
+    a {
+        color: $color__white;
+        @extend %link;
+    }
+}

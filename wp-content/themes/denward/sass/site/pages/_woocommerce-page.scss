@@ -1,0 +1,6 @@
+.woo-page {
+    padding: 60px 0;
+    .woocommerce-info {
+        @include font();
+    }
+}

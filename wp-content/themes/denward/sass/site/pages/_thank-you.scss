@@ -1,0 +1,19 @@
+.thanks {
+    padding: 50px 0;
+    p {
+        @include font($alignment:center);
+    }
+    @include e('button') {
+        text-align: center;
+        margin-top: 30px;
+    }
+    @include e('btn') {
+        @include button($color__primary--blue);
+    }
+    @include e('check') {
+        text-align: center;
+        font-size: 80px;
+        margin-bottom: 20px;
+        color: $color__primary--green;
+    }
+}

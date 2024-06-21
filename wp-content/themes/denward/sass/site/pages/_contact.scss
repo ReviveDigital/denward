@@ -1,0 +1,227 @@
+.contact {
+    padding: 50px 0 60px;
+    @include e('content') {
+        @include default();
+        padding-bottom: 20px;
+    }
+    @include e('container') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('block') {
+        @include make-col(12);
+        @include media-breakpoint-up(lg) {
+            @include make-col(6.9);
+        }
+        form#gform_2 {
+            ul {
+                list-style: none;
+                padding-left: 0;
+                margin-bottom: 0;
+                li {
+                    padding-bottom: 10px;
+                    label {
+                        display: none;
+                    }
+                    input, textarea {
+                      @include font();
+                       width: 100%;
+                       padding: 10px;
+                       background: $color__grey;
+                       border: 1px solid $color__field-border;
+                       -webkit-appearance: none;
+                       border-radius: 20px;
+                       &:focus {
+                           outline: none;
+                       }
+                       &::placeholder {
+                           @include font($color__body,14px!important);
+                       }
+                    }
+                    textarea {
+                        height: 150px;
+                    }
+                }
+                li#field_2_6 {
+                    margin-top: 10px;
+                    @include make-col(12);
+                    .ginput_container_checkbox {
+                        ul {
+                            list-style: none;
+                            padding-left: 0;
+                            li.gchoice_2_6_1 {
+                                input {
+                                    position: relative;
+                                    width: auto;
+                                    -webkit-appearance: none;
+                                }
+                                label {
+                                  display: inline!important;
+                                  margin-left: 5px;
+                                  @include font($color__body, 14px);
+                              }
+                            }
+                        }
+                    }
+                    input[type='checkbox'] {
+                        background: none;
+                        box-shadow: none;
+                        border: none;
+                        padding: 0;
+                        &:focus {
+                          box-shadow: none;
+                          outline: none;
+                        }
+                        &:after {
+                          width: 20px;
+                          height: 20px;
+                          top: -2px;
+                          padding: 7px;
+                          left: -1px;
+                          vertical-align: middle;
+                          position: relative;
+                          background: $color__grey;
+                          border: 1px solid $color__field-border;
+                          border-radius: 2px;
+                          content: '';
+                          display: inline-block;
+                          visibility: visible;
+                          cursor: pointer;
+                        }
+                      }
+                      input[type='checkbox']:checked {
+                        &:before {
+                          font-family: 'Font Awesome 5 pro';
+                          font-weight: 600;
+                          content: '\f00c';
+                          position: absolute;
+                          color: $color__primary--green;
+                          z-index: 1;
+                          top: 2px;
+                          left: 4px;
+                          font-size: 12px;
+                        }
+                  }
+               }
+               li.gfield_error {
+                    input, select {
+                        border: 1px solid $color__red!important;
+                    }
+                    input#choice_2_6_1 {
+                        border: none!important;
+                    }
+                    input[type='checkbox']  {
+                          &:after {
+                            border-color: $color__red!important;
+                          }
+                      }
+                      input[type='checkbox']:checked {
+                          &:after {
+                            border-color: $color__grey!important;
+                          }
+                      }
+                    .validation_message {
+                        display: none;
+                    }
+                }
+            }
+            .validation_error {
+                 @include font($color__red);
+             }
+        }
+        .gform_footer {
+            margin-top: 15px;
+            #gform_submit_button_2 {
+                @include button($color__primary--green);
+                border: none;
+            }
+        }
+    }
+    @include e('info') {
+        @include make-col(12);
+        margin-top: 30px;
+        @include media-breakpoint-up(lg) {
+            @include make-col(4.9);
+            margin-top: 0;
+        }
+    }
+    @include e('details') {
+        padding: 20px;
+        background: $color__primary--blue;
+        border-radius: 15px;
+    }
+    @include e('list') {
+        list-style: none;
+        padding-left: 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
+        padding-bottom: 15px;
+    }
+    @include e('item') {
+        @include font($color__white,$margin-bottom: 0);
+        @include m('department') {
+            font-weight: 600;
+        }
+    }
+    @include e('link') {
+        @extend %link;
+        color: $color__white;
+        &:hover {
+            color: $color__white;
+            opacity: 0.7;
+        }
+    }
+    @include e('strong') {
+        font-weight: 600;
+        @include m('fax') {
+            color: $color__white!important;
+            a[x-apple-data-detectors] {
+                color: $color__white!important;
+            }
+        }
+    }
+    @include e('social') {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    @include e('social-item') {
+        @include m('title') {
+            @include font($color__white,$font-weight: 600,$margin-bottom: 2px);
+        }
+        @include m('icon') {
+            display: inline-block;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+    @include e('icon') {
+        width: 30px;
+        height: 30px;
+        line-height: 32px;
+        background: rgba(255, 255, 255, 0.15);
+        color: $color__white;
+        font-size: 13px;
+        border-radius: 50%;
+        text-align: center;
+        @extend %link;
+        &:hover {
+            background: $color__white;
+            color: $color__primary--blue;
+        }
+    }
+    @include e('iso') {
+        max-width: 120px;
+        margin: 30px 0 10px;
+    }
+}
+.map {
+    @include e('acf-map') {
+        height: 200px;
+        @include media-breakpoint-up(md) {
+            height: 300px;
+        }
+        @include media-breakpoint-up(lg) {
+        height: 400px;
+        }
+    }
+}

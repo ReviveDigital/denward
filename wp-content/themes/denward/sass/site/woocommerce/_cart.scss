@@ -1,0 +1,364 @@
+.basket {
+    @include e('table') {
+        width: 100%;
+    }
+    @include e('thead') {
+        background: $color__grey;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    @include e('th') {
+        @include font($color__primary--blue,$size: 13px,$font-weight: 600);
+        padding: 10px 0;
+        @include m('first') {
+            padding-left: 10px;
+        }
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+        }
+        @include media-breakpoint-down(sm) {
+            &:not(:first-child) {
+                display: none;
+            }
+        }
+    }
+    @include e('tr') {
+        &:not(:last-child) {
+            border-bottom: 1px solid $color__grey;
+        }
+    }
+    .woocommerce-shipping-totals {
+        .woocommerce-shipping-destination {
+            display: none;
+        }
+        .shipping-calculator-button {
+            display: none;
+        }
+        .woocommerce-shipping-methods {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            li {
+                label {
+                    @include font($margin-bottom: 0);
+                }
+            }
+        }
+    }
+    @include e('td') {
+        padding: 20px 0;
+        img {
+            max-width: 50px;
+            width: 100%;
+            height: auto;
+            margin-right: 10px;
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+        @include media-breakpoint-only(md) {
+            font-size: 14px;
+        }
+        @include media-breakpoint-down(sm) {
+            display: block;
+            padding: 10px 0 0;
+            float: left;
+            width: 100%;
+            &:before {
+                @include font($size:13px,$margin-bottom: 0);
+            }
+            &:nth-child(2) {
+                &:before {
+                    content: 'Price:';
+                }
+            }
+            &:nth-child(4) {
+                &:before {
+                    content: 'Weight:';
+                }
+            }
+            &:nth-child(5) {
+                &:before {
+                    content: 'Subtotal:';
+                }
+            }
+        }
+        @include m('price') {
+            @include font($size:13px,$margin-bottom: 0);
+            @include media-breakpoint-up(lg) {
+                font-size: 16px;
+            }
+            @include media-breakpoint-only(md) {
+                font-size: 14px;
+            }
+        }
+        @include m('weight') {
+            @include font($size:13px,$margin-bottom: 0);
+            @include media-breakpoint-up(lg) {
+                font-size: 16px;
+            }
+            @include media-breakpoint-only(md) {
+                font-size: 14px;
+            }
+        }
+        @include m('subtotal') {
+            @include font($size:13px);
+            @include media-breakpoint-only(md) {
+                font-size: 14px;
+            }
+            @include media-breakpoint-up(lg) {
+                font-size: 16px;
+            }
+        }
+        @include m('qty') {
+            label {
+                display: none;
+            }
+            input {
+                @include font($size: 13px,$margin-bottom: 0);
+                width: 100%;
+                padding: 10px;
+                background: $color__white;
+                border: 1px solid $color__field-border;
+                -webkit-appearance: none;
+                border-radius: 0;
+                width: 39px!important;
+                float: left;
+                display: inline-block;
+                @include media-breakpoint-only(md) {
+                    font-size: 14px;
+                    width: 52px!important;
+                }
+                @include media-breakpoint-up(lg) {
+                    font-size: 16px;
+                    width: 58px!important;
+                }
+                @include media-breakpoint-down(sm) {
+                    width: 54px!important;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        dl.variation {
+                margin-top: 10px;
+            dt {
+                @include font($margin-bottom: 5px);
+                float: left;
+                margin-right: 10px;
+            }
+            dd {
+                @include font($margin-bottom: 5px);
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    @include e('remove') {
+        display: inline-block;
+        @extend %link;
+        color: $color__body;
+        margin-left: 9px;
+        margin-top: 9px;
+        &:hover {
+            color: $color__primary--blue;
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: 14px;
+        }
+    }
+    @include e('product-name') {
+        @include font($size:13px);
+        @extend %link;
+        &:hover {
+            color: $color__primary--green;
+        }
+        @include media-breakpoint-only(md) {
+            font-size: 14px;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: 16px;
+        }
+    }
+    @include e('coupon') {
+        label {
+            display: none;
+        }
+        .coupon {
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            float: left;
+            @include media-breakpoint-up(lg) {
+                width: 30%;
+            }
+        }
+        input {
+            background: $color__grey!important;
+            border: 1px solid $color__field-border!important;
+            border-radius: 20px;
+            padding: 10px!important;
+            @include font();
+            width: 100%;
+            padding-right: 60px!important;
+            &:focus {
+                outline: none;
+            }
+        }
+        .button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border: 1px solid $color__primary--blue;
+            background: $color__primary--blue;
+            color: $color__white;
+            font-size: 0;
+            padding: 14px 20px;
+            @extend %link;
+            cursor: pointer;
+            &:hover {
+                background: $color__primary--green;
+                color: $color__white;
+                border-color: $color__primary--green;
+            }
+            &:focus {
+                outline: none;
+            }
+            &:after {
+                content: '\f067';
+                font-size: 16px;
+                @include light-icons();
+                color: $color__white;
+            }
+        }
+    }
+    @include e('update') {
+        @include button($color__primary--blue);
+        border: none;
+        font-size: 14px;
+        @include media-breakpoint-up(lg) {
+            margin-top: 17px;
+            margin-left: 20px;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .basket__upadte:disabled {
+        opacity: 0.2;
+    }
+    @include e('row') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('col') {
+        @include make-col(12);
+        margin-top: 20px;
+        @include media-breakpoint-up(lg) {
+            @include make-col(4.9);
+        }
+    }
+    @include e('cta') {
+        @include make-col(12);
+        margin-top: 20px;
+        @include media-breakpoint-up(lg) {
+            @include make-col(6.9);
+        }
+    }
+    .woocommerce-notices-wrapper {
+        @include font();
+    }
+    @include e('box') {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 30px;
+        border-radius: 10px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            z-index: 1;
+            background: linear-gradient(to right, #061252, rgba(6, 18, 82, 0.85), rgba(6, 18, 82, 0.66));
+        }
+    }
+    @include e('content') {
+        z-index: 11;
+        position: relative;
+        @include media-breakpoint-up(lg) {
+            width: 89%;
+        }
+    }
+    @include e('cta-title') {
+        @include heading($color__white,$margin-bottom: 0);
+    }
+    @include e('cta-text') {
+        @include default-white();
+    }
+    @include e('total') {
+        background: $color__grey;
+        border-radius: 10px;
+        padding: 20px;
+        h2 {
+            display: none;
+        }
+        table {
+            width: 100%;
+            tbody {
+                tr {
+                    &:not(:last-child) {
+                        border-bottom: 2px solid $color__white;
+                    }
+                    th, td {
+                        @include font($margin-bottom: 0);
+                        padding: 10px 0;
+                    }
+                    td {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+        .checkout-button {
+            @include button($color__primary--green);
+            margin-top: 20px;
+        }
+    }
+    @include e('total-title') {
+        @include heading($margin-bottom: 5px);
+    }
+    @include e('hr') {
+        border-top: 1px solid $color__grey;
+        @include media-breakpoint-down(sm) {
+            border-color: #e2e2e2;
+        }
+    }
+    .woocommerce-remove-coupon {
+        color: $color__body;
+        @extend %link;
+        &:hover {
+            color: $color__primary--green;
+        }
+    }
+    .cross-sells {
+        display: none;
+    }
+}
+.woocommerce {
+    .cart-empty {
+        @include font();
+    }
+    p.return-to-shop {
+        .wc-backward {
+            @include button($color__primary--blue);
+        }
+    }
+}

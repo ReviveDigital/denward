@@ -1,0 +1,203 @@
+.order {
+    @include e('box') {
+        background: $color__grey;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    @include e('success') {
+        @include heading();
+    }
+    @include e('list') {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        @include make-flex();
+        @include media-breakpoint-only(md) {
+            width: 90%;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 70%;
+        }
+    }
+    @include e('item') {
+        @include make-col(12);
+        @include font();
+        @include media-breakpoint-up(md) {
+            @include make-col(5.9);
+        }
+    }
+    @include e('blue') {
+        color: $color__primary--blue;
+        font-weight: 600;
+    }
+    @include e('payment') {
+        margin-top: 20px;
+        p {
+            @include font();
+        }
+    }
+    @include e('qty') {
+        border: 1px solid $color__grey;
+        margin-bottom: 0!important;
+        padding: 10px 20px;
+        width: auto;
+        float: left;
+    }
+    @include e('small') {
+        font-size: 12px;
+        display: block;
+        width: 100%;
+        float: left;
+        margin-top: 2px;
+    }
+    .woocommerce-order-details__title {
+        @include heading();
+        font-size: 25px;
+    }
+    table {
+        width: 100%;
+        thead {
+            background: $color__grey;
+            padding: 10px;
+            border-radius: 8px;
+            th {
+                @include font($color__primary--blue,$font-weight: 600);
+                padding: 10px 0;
+                &.woocommerce-table__product-name {
+                    padding-left: 10px;
+                }
+            }
+        }
+        tbody {
+            tr {
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color__grey;
+                }
+                td {
+                    padding: 20px 0;
+                    @include font();
+                    a {
+                        color: $color__body;
+                        @extend %link;
+                        &:hover {
+                            color: $color__body;
+                            opacity: 0.7;
+                        }
+                    }
+                    ul.wc-item-meta {
+                        list-style: none;
+                        padding-left: 0;
+                        margin-bottom: 0;
+                        li {
+                            @include font();
+                            .wc-item-meta-label {
+                                font-weight: 400;
+                                float: left;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include e('container') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('confirmation') {
+        @include make-col(12);
+        margin-top: 20px;
+        @include media-breakpoint-up(lg) {
+            @include make-col(3.9);
+        }
+    }
+    @include e('cta') {
+        @include make-col(12);
+        margin-top: 20px;
+        @include media-breakpoint-up(lg) {
+            @include make-col(7.9);
+        }
+    }
+    @include e('cta-content') {
+        z-index: 11;
+        position: relative;
+        @include media-breakpoint-up(lg) {
+            width: 89%;
+        }
+    }
+    @include e('cta-title') {
+        @include heading($color__white,$margin-bottom: 0);
+    }
+    @include e('cta-text') {
+        p {
+            @include font($color__white);
+        }
+    }
+    @include e('area') {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 30px;
+        border-radius: 10px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            z-index: 1;
+            background: linear-gradient(to right, #061252, rgba(6, 18, 82, 0.85), rgba(6, 18, 82, 0.66));
+        }
+    }
+    @include e('cta-btn') {
+        @include button();
+    }
+    @include e('confirmation') {
+        background: $color__grey;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    @include e('confirmation-title') {
+        @include heading($margin-bottom: 0);
+    }
+    @include e('row') {
+        @include make-flex($justify:space-between);
+        &:not(:last-child) {
+            border-bottom: 2px solid $color__white;
+        }
+        &:last-child {
+            p {
+                font-weight: 600;
+            }
+        }
+    }
+    @include e('totals') {
+        @include make-col(5.9);
+        margin-bottom: 0!important;
+        padding: 15px 0;
+        &:nth-child(even) {
+            text-align: right;
+        }
+    }
+    .woocommerce-customer-details {
+        .woocommerce-column__title {
+            @include heading();
+            margin-top: 20px!important;
+        }
+        address {
+            @include font();
+        }
+        .woocommerce-columns {
+            @include make-flex($justify:space-between);
+            .woocommerce-column {
+                @include make-col(12);
+                @include media-breakpoint-up(lg) {
+                    @include make-col(5.9);
+                }
+            }
+        }
+    }
+}

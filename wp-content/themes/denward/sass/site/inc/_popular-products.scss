@@ -1,0 +1,169 @@
+.popular {
+    padding: 60px 0;
+    background: $color__grey;
+    @include e('container') {
+        @include make-flex($justify:space-between);
+        margin-bottom: 20px;
+    }
+    @include e('block') {
+        @include make-col(12);
+        align-self: center;
+        @include media-breakpoint-up(md) {
+            @include make-col(7.9);
+        }
+    }
+    @include e('title') {
+        @include heading($margin-bottom: 0);
+    }
+    @include e('content') {
+        p {
+            @include font();
+        }
+    }
+    @include e('arrows') {
+        @include make-col(12);
+        align-self: center;
+        margin: 20px 0;
+        @include media-breakpoint-up(md) {
+            @include make-col(3.9);
+            text-align: right;
+            margin: 0;
+        }
+    }
+    @include e('arrow') {
+        background: $color__white;
+        padding: 10px 16px;
+        color: $color__primary--blue;
+        cursor: pointer;
+        font-size: 20px;
+        @extend %link;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
+        &:hover {
+            background: $color__primary--blue;
+            color: $color__white;
+        }
+        @include m('prev') {
+            margin-right: 10px;
+        }
+    }
+    @include e('img') {
+        background: white;
+        display: block;
+        border-radius: 4px;
+        &:focus {
+            outline: none;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            max-width: 150px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    }
+    @include e('col') {
+        background: white;
+        border-radius: 4px;
+        position: relative;
+    }
+    .slick-slide {
+       margin: 0 5px;
+    }
+    .slick-list {
+       margin: 0 -5px;
+       // display: flex;
+    }
+    @include e('wish') {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        &:focus {
+            outline: none;
+        }
+    }
+    @include e('heart') {
+        background: $color__grey;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 14px;
+        color: $color__body;
+        @extend %link;
+        &:hover {
+            color: $color__primary--blue;
+            font-weight: 600;
+        }
+    }
+    @include e('line') {
+        width: 50%;
+        border-top: 3px solid $color__grey;
+    }
+    @include e('info') {
+        padding: 0 10px;
+    }
+    @include e('item') {
+        @include font($alignment:center,$font-weight: 600,$margin-bottom: 5px);
+    }
+    @include e('entry') {
+        color: $color__body;
+        @extend %link;
+        &:hover {
+            color: $color__body;
+        }
+    }
+    @include e('price') {
+        @include font($color__primary--blue,$alignment:center,$font-weight: 800,$margin-bottom: 3px);
+        del {
+
+        }
+        ins {
+            text-decoration: none;
+            &:before {
+                content: ' ';
+                border-left: 2px solid $color__grey;
+                color: $color__grey;
+                margin: 0 10px 0 5px;
+            }
+            span.amount {
+                color: $color__primary--green;
+            }
+        }
+    }
+    @include e('vat') {
+        @include font($color__vat,$alignment:center);
+        font-size: 12px;
+    }
+    @include e('row') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('btn') {
+        @include make-col(5.9);
+        @include view();
+    }
+    @include e('basket') {
+        @include make-col(5.9);
+        @include basket();
+    }
+    @include e('basket-icon') {
+        max-width: 20px;
+        display: block;
+        margin: 0 auto;
+    }
+    .onsale {
+        background: $color__primary--green;
+        padding: 10px 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        @include font($color__white,$margin-bottom: 0,$font-weight: 600);
+        font-size: 14px;
+    }
+    .slick-track {
+        display: inherit;
+    }
+}

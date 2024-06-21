@@ -1,0 +1,197 @@
+@mixin e($element) {
+	&__#{$element} {
+		@content;
+	}
+}
+
+@mixin m($element) {
+	&--#{$element} {
+		@content;
+	}
+}
+
+@mixin make-flex($direction:row,$wrap:wrap,$justify:flex-start,$align-items:stretch,$align-content:stretch) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	justify-content: $justify;
+	align-items: $align-items;
+	align-content: $align-content;
+
+}
+
+@mixin button($background:$color__primary--green,$color:$color__white,$margin: 0) {
+
+    @include font($color__white,16px,center,$font-weight: 600);
+	color: $color;
+    display: inline-block;
+	margin: $margin;
+	padding: 15px 40px;
+	background: $background;
+	border-radius: 30px;
+    text-decoration: none;
+    transition: all .4s;
+	outline: none;
+	transition: all .2s ease-in-out;
+    cursor: pointer;
+	&:hover {
+		text-decoration: none;
+		color: $color;
+		background: lighten($background, 5%);
+	}
+}
+
+@mixin basket($background:$color__primary--blue,$color:$color__white,$margin: 0) {
+	@include font($color__white,16px,center,$font-weight: 600);
+	color: $color;
+    display: inline-block;
+	margin: $margin;
+	padding: 15px 20px;
+	background: $background;
+    text-decoration: none;
+    transition: all .4s;
+	outline: none;
+	transition: all .2s ease-in-out;
+    cursor: pointer;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	&:hover {
+		text-decoration: none;
+		color: $color;
+		background: lighten($background, 5%);
+	}
+}
+
+@mixin view($background:$color__primary--green,$color:$color__white,$margin: 0) {
+	@include font($color__white,16px,center,$font-weight: 600);
+	color: $color;
+    display: inline-block;
+	margin: $margin;
+	padding: 15px 20px;
+	background: $background;
+    text-decoration: none;
+    transition: all .4s;
+	outline: none;
+	transition: all .2s ease-in-out;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+    cursor: pointer;
+	&:hover {
+		text-decoration: none;
+		color: $color;
+		background: lighten($background, 5%);
+	}
+}
+
+@mixin heading($font-color:$color__primary--blue, $alignment:left, $margin-bottom:15px, $font-weight:800, $line-height: 1.5, $font: $font__main, $transform:none) {
+	font-family: $font;
+	line-height: $line-height;
+	font-weight: $font-weight;
+	color: $font-color;
+	text-align:$alignment;
+	margin-bottom: $margin-bottom;
+	text-transform: $transform;
+}
+
+@mixin subheading($font-color:$color__primary--blue, $alignment:left, $margin-bottom:15px, $font-weight:600, $line-height: 1.5, $font: $font__main, $transform:none) {
+	font-family: $font;
+	line-height: $line-height;
+	font-weight: $font-weight;
+	color: $font-color;
+	text-align:$alignment;
+	margin-bottom: $margin-bottom;
+	text-transform: $transform;
+}
+
+@mixin font($font-color:$color__body, $size: 16px, $alignment:left, $margin-bottom:15px, $font-weight:400, $line-height: 1.5, $font: $font__main, $transform:none) {
+	font-family: $font;
+	font-size: $size;
+	line-height: $line-height;
+	font-weight: $font-weight;
+	color: $font-color;
+	text-align:$alignment;
+	margin-bottom: $margin-bottom;
+	text-transform: $transform;
+}
+@mixin default {
+	p {
+		@include font();
+	}
+	h1,h2,h3,h4,h5 {
+        @include heading();
+        margin: 10px 0;
+    }
+    ul, ol {
+        li {
+            @include font();
+        }
+    }
+    a {
+        @extend %link;
+		@include font();
+        text-decoration: underline;
+        &:hover {
+			color:$color__primary--green;
+            text-decoration: underline;
+        }
+    }
+}
+
+@mixin default-white {
+	p {
+		@include font($color__white);
+	}
+	h1,h2,h3,h4,h5 {
+        @include heading($color__white);
+        margin: 10px 0;
+    }
+    ul, ol {
+        li {
+            @include font($color__white);
+        }
+    }
+    a {
+        @extend %link;
+		@include font($color__white);
+        text-decoration: underline;
+        &:hover {
+			color:$color__primary--green;
+            text-decoration: underline;
+        }
+    }
+}
+
+@mixin light-icons {
+	@include fa-icon;
+	@include font-awesome-fix;	
+  }
+  @mixin reg-icons {
+	@include fa-icon;
+	@include font-awesome-fix;
+  }
+  @mixin solid-icons {
+	@include fa-icon;
+	@include font-awesome-fix;	
+	// @extend .fas;
+	font-weight: 600;
+  }
+
+@mixin font-awesome-fix {
+	font-family: 'Font Awesome 5 Pro';
+	font-style: normal;
+}
+
+@mixin rotate($degrees) {
+	-ms-transform: rotate($degrees + deg);
+	-webkit-transform: rotate($degrees + deg);
+	transform: rotate($degrees + deg);
+}
+
+@mixin stop-user-select() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

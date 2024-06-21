@@ -1,0 +1,49 @@
+.accreditations {
+    padding: 50px 0;
+    @include e('intro') {
+        @include default();
+        margin-bottom: 40px;
+    }
+    @include e('container') {
+        @include make-flex($justify:space-between);
+        border-bottom: 1px solid $color__grey;
+        padding: -10px 0 40px;
+        @include media-breakpoint-up(md) {
+            padding: 0 0 40px;
+        }
+    }
+    @include e('img') {
+        @include make-col(12);
+        margin-bottom: 20px;
+        @include media-breakpoint-up(lg) {
+            @include make-col(2.9);
+            margin-bottom: 0;
+            align-self: center;
+        }
+    }
+    @include e('block') {
+        @include make-col(12);
+        @include media-breakpoint-up(lg) {
+            @include make-col(8.9);
+            align-self: center;
+        }
+    }
+    @include e('title') {
+        @include heading($margin-bottom: 0);
+    }
+    @include e('content') {
+        p {
+            @include font();
+        }
+    }
+    @include e('image') {
+        height: auto;
+        border-radius: 10px;
+        @include media-breakpoint-down(sm) {
+            max-width: 150px;
+        }
+        @include media-breakpoint-up(md) {
+            max-width: 250px;
+        }
+    }
+}

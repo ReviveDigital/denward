@@ -1,0 +1,53 @@
+.error {
+    padding: 60px 0;
+    background: $color__grey;
+    @include media-breakpoint-up(md) {
+        padding: 150px 0 150px;
+    }
+    @include e('container') {
+        @include make-flex($justify:center);
+    }
+    @include e('block') {
+        @include make-col(12);
+        padding: 50px 20px 50px;
+        position: relative;
+        border-radius: 15px;
+        background: $color__white;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.04);
+        @include media-breakpoint-up(md) {
+            @include make-col(9);
+            padding: 70px 20px 60px;
+        }
+        &:before {
+            content: '\f06a';
+            @include solid-icons();
+            font-size: 50px;
+            color: $color__primary--blue;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include media-breakpoint-up(md) {
+                font-size: 100px;
+            }
+        }
+    }
+    @include e('title') {
+        @include heading($alignment:center,$margin-bottom: 0,$line-height: 1);
+        @include media-breakpoint-up(md) {
+            font-size: 150px;
+        }
+    }
+    @include e('text') {
+        @include font($alignment:center);
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+        }
+    }
+    @include e('button') {
+        text-align: center;
+    }
+    @include e('btn') {
+        @include button();
+    }
+}

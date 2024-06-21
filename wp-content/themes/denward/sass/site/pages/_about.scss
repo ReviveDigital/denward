@@ -1,0 +1,124 @@
+.intro {
+    padding: 50px 0;
+    @include default();
+}
+.history {
+    padding: 50px 0 70px;
+    background: $color__grey;
+    @include e('timeline') {
+        position: relative;
+        margin-top: 60px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            margin-left: -2px;
+            left: 18px;
+            height: 100%;
+            width: 4px;
+            background: #f1f1f1;
+            @include media-breakpoint-up(lg) {
+              left: 50%;
+            }
+        }
+    }
+    @include e('row') {
+        &:first-child {
+            opacity: 1;
+        }
+        margin-bottom: 70px;
+        opacity: 0;
+        position: relative;
+        @include make-flex($justify:flex-end);
+        &:nth-child(odd) {
+            @include media-breakpoint-up(lg) {
+              justify-content: flex-start;
+              .history__date {
+                  border-top-right-radius: 20px;
+                  border-bottom-left-radius: 20px;
+              }
+            }
+        }
+        &:nth-child(even) {
+            @include media-breakpoint-up(lg) {
+                .history__date {
+                    left: 0;
+                    right: auto;
+                    border-top-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                }
+            }
+        }
+    }
+    @include e('entry') {
+        transform: translate(-50%, 0);
+        position: absolute;
+        top: 0;
+        left: 18px;
+        border-radius: 50%;
+        background: $color__primary--blue;
+        width: 40px;
+        height: 40px;
+        @include media-breakpoint-up(md) {
+            width: 50px;
+            height: 50px;
+        }
+        @include media-breakpoint-up(lg) {
+            left: 50%;
+            width: 50px;
+            height: 50px;
+        }
+    }
+    @include e('icon') {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        font-size: 30px;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: $color__white;
+    }
+    @include e('block') {
+        @include make-col(10);
+        margin-bottom: 30px;
+        position: relative;
+        @include media-breakpoint-up(lg) {
+          @include make-col(5);
+          margin-bottom: 0;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    @include e('box') {
+        padding: 40px 20px 20px;
+        background: $color__white;
+        border-radius: 15px;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.02);
+    }
+    @include e('date') {
+        @include heading($color__white,$margin-bottom:5px,$font-weight: 400);
+        font-size: 14px;
+        position: absolute;
+        top: 0;
+        padding: 5px 15px;
+        background: $color__primary--green;
+        @include media-breakpoint-down(md) {
+            left: 0;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        @include media-breakpoint-up(lg) {
+          right: 0;
+        }
+    }
+    @include e('title') {
+        @include heading($margin-bottom: 0);
+    }
+    @include e('text') {
+        p {
+            @include font();
+        }
+    }
+}

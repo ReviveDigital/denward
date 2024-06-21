@@ -1,0 +1,128 @@
+.create {
+    @include e('container') {
+        @include make-flex();
+    }
+    @include e('account') {
+        @include make-col(12);
+        background: $color__primary--blue;
+        padding: 40px;
+        @include media-breakpoint-up(lg) {
+            @include make-col(8);
+        }
+    }
+    @include e('manufacturing') {
+        @include make-col(12);
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        @include media-breakpoint-down(md) {
+            height: 400px;
+        }
+        @include media-breakpoint-up(lg) {
+            @include make-col(4);
+        }
+    }
+    @include e('row') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('col') {
+        @include make-col(12);
+        @include media-breakpoint-up(lg) {
+            @include make-col(7.5);
+            align-self: center;
+        }
+        @include media-breakpoint-up(xl) {
+            @include make-col(7.9);
+        }
+    }
+    @include e('button') {
+        @include make-col(12);
+        margin-bottom: 10px;
+        @include media-breakpoint-up(lg) {
+            @include make-col(3.3);
+            align-self: center;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        @include media-breakpoint-up(xl) {
+            @include make-col(2.9);
+        }
+    }
+    @include e('title') {
+        @include heading($color__white,$margin-bottom: 0);
+    }
+    @include e('text') {
+        @include font($color__white);
+    }
+    @include e('btn') {
+        @include button();
+    }
+    @include e('list') {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        @include make-flex();
+    }
+    @include e('item') {
+        @include font($color__white);
+        position: relative;
+        padding-left: 50px;
+        margin-top: 15px;
+        @include make-col(12);
+        @include media-breakpoint-up(lg) {
+            margin-right: 11px;
+            @include make-col(5.8);
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
+        @include media-breakpoint-up(xl) {
+            margin-right: 13px;
+        }
+    }
+    @include e('opacity') {
+        opacity: 0.4;
+    }
+    @include e('span') {
+        font-weight: 600;
+        display: block;
+    }
+    @include e('icon') {
+        position: absolute;
+        left: 20px;
+        top:0;
+        transform: translate(-50%, 0);
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 50%;
+        text-align: center;
+        color: $color__white;
+    }
+    @include e('heading') {
+        @include heading($margin-bottom: 0);
+    }
+    @include e('content') {
+        @include font($margin-bottom: 5px);
+    }
+    @include e('position') {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 70px 20px 20px;
+        background: linear-gradient(to top, #fff, #fff, #fff, rgba(255, 255, 255, 0.79), rgba(255, 255, 255, 0));
+    }
+    @include e('link') {
+        @include font($color__primary--green,$font-weight: 600,$margin-bottom: 0);
+        @extend %link;
+        &:hover {
+            color: $color__primary--green;
+        }
+    }
+    @include e('right-icon') {
+        vertical-align: middle;
+    }
+}

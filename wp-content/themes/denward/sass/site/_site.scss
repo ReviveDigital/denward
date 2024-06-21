@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------
+## Globals
+--------------------------------------------------------------*/
+@import "globals/globals";
+@import "globals/colours";
+@import "globals/headings";
+@import "globals/mixins";
+@import "globals/cookies";
+
+/*--------------------------------------------------------------
+## Plugins
+--------------------------------------------------------------*/
+@import "plugins/font-awesome/fontawesome";
+@import "plugins/font-awesome/fa-solid";
+@import "plugins/font-awesome/fa-light";
+@import "plugins/font-awesome/fa-brands";
+
+/*--------------------------------------------------------------
+## Primary
+--------------------------------------------------------------*/
+@import "primary/header";
+@import "primary/footer";
+
+/*--------------------------------------------------------------
+## Pages
+--------------------------------------------------------------*/
+@import "pages/home";
+@import "pages/default";
+@import "pages/register";
+@import "pages/about";
+@import "pages/our-service";
+@import "pages/subpage";
+@import "pages/contact";
+@import "pages/news";
+@import "pages/single";
+@import "pages/reviews";
+@import "pages/accreditation";
+@import "pages/woocommerce-page";
+@import "pages/wishlist";
+@import "pages/quote";
+@import "pages/thank-you";
+@import "pages/error";
+
+/*--------------------------------------------------------------
+## Woocommerce
+--------------------------------------------------------------*/
+@import "woocommerce/woocommerce";
+@import "woocommerce/single-product";
+@import "woocommerce/cart";
+@import "woocommerce/checkout";
+@import "woocommerce/confirmation";
+@import "woocommerce/account";
+@import "woocommerce/notices";
+
+/*--------------------------------------------------------------
+## Includes
+--------------------------------------------------------------*/
+@import "inc/slider";
+@import "inc/special-offers";
+@import "inc/popular-products";
+@import "inc/create-account";
+@import "inc/cta";
+@import "inc/latest-news";
+@import "inc/reviews";
+@import "inc/page-banner";

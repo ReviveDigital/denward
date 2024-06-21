@@ -1,0 +1,137 @@
+.wish {
+    padding: 60px 0;
+    background: $color__grey;
+    @include e('intro') {
+        @include default();
+        margin-bottom: 40px;
+    }
+    @include e('products') {
+        @include make-flex();
+    }
+    @include e('product') {
+        background: white;
+        position: relative;
+        margin-top: 30px;
+        border-radius: 4px;
+        @include make-col(12);
+        @include media-breakpoint-only(md) {
+            margin-right: 11px;
+            @include make-col(5.8);
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            margin-right: 11px;
+            @include make-col(3.9);
+            margin-right: 8px;
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+        }
+        @include media-breakpoint-up(xl) {
+            margin-right: 13px;
+        }
+    }
+    @include e('remove') {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    @include e('icon-remove') {
+        background: $color__grey;
+        height: 25px;
+        width: 25px;
+        line-height: 25px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 13px;
+        color: $color__body;
+        @extend %link;
+        &:hover {
+            background: $color__primary--green;
+            color: $color__white;
+        }
+    }
+    @include e('sale') {
+        background: $color__primary--green;
+        padding: 10px 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        @include font($color__white,$margin-bottom: 0,$font-weight: 600);
+        font-size: 14px;
+    }
+    @include e('link') {
+        @include m('img') {
+            background: white;
+            display: block;
+            border-radius: 4px;
+        }
+    }
+    @include e('img') {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        max-width: 160px;
+        border-radius: 4px;
+        display: block;
+    }
+    @include e('line') {
+        width: 50%;
+        border-top: 3px solid $color__grey;
+    }
+    @include e('info') {
+        padding: 0 10px;
+    }
+    @include e('item') {
+        @include font($alignment:center,$font-weight: 600,$margin-bottom: 5px);
+    }
+    @include e('entry') {
+        color: $color__body;
+        @extend %link;
+        &:hover {
+            color: $color__body;
+        }
+    }
+    @include e('price') {
+        @include font($color__primary--blue,$alignment:center,$font-weight: 800,$margin-bottom: 3px);
+        del {
+
+        }
+        ins {
+            text-decoration: none;
+            &:before {
+                content: ' ';
+                border-left: 2px solid $color__grey;
+                color: $color__grey;
+                margin: 0 10px 0 5px;
+            }
+            span.amount {
+                color: $color__primary--green;
+            }
+        }
+    }
+    @include e('vat') {
+        @include font($color__vat,$alignment:center);
+        font-size: 12px;
+    }
+    @include e('row') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('btn') {
+        @include make-col(5.9);
+        @include view();
+    }
+    @include e('basket') {
+        @include make-col(5.9);
+        @include basket();
+    }
+    @include e('basket-icon') {
+        max-width: 20px;
+        display: block;
+        margin: 0 auto;
+    }
+}

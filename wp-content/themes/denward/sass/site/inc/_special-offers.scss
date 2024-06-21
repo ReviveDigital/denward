@@ -1,0 +1,102 @@
+.special {
+    padding: 60px 0;
+    @include e('slider') {
+        @include make-flex($justify:space-between);
+        display: flex!important;
+        position: relative;
+    }
+    @include e('img') {
+        @include make-col(12);
+        @include media-breakpoint-up(lg) {
+            @include make-col(3.9);
+            margin-top: 20px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+    }
+    @include e('col') {
+        margin-top: 20px;
+        @include make-col(12);
+        align-self: center;
+        @include media-breakpoint-up(lg) {
+            @include make-col(7.9);
+        }
+    }
+    @include e('link') {
+        &:focus {
+            outline: none;
+        }
+    }
+    @include e('title') {
+        @include subheading($color__primary--green,$margin-bottom: 0);
+    }
+    @include e('offer') {
+        @include heading($color__primary--green,$margin-bottom: 0,$font-weight: 800,$transform:uppercase);
+        font-size: 30px;
+        @include media-breakpoint-up(lg) {
+            font-size: 45px;
+            margin-top: -7px;
+        }
+    }
+    @include e('name') {
+        @include font($font-weight: 600);
+        @extend %link;
+        @include media-breakpoint-up(lg) {
+            font-size: 18px;
+        }
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            color: $color__body;
+        }
+    }
+    @include e('content') {
+        margin-top: 10px;
+        p {
+            @include font();
+        }
+    }
+    @include e('button') {
+        @include button();
+    }
+    .slick-dots {
+        position: absolute;
+        top: 0;
+        right: 0;
+        list-style: none;
+        padding-left: 0;
+        @include media-breakpoint-down(sm) {
+            display: none!important;
+        }
+        li {
+            font-size: 0;
+            display: inline-block;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+            button {
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                padding: 2px 15px;
+                background: $color__primary--green;
+                opacity: 0.5;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+            &.slick-active {
+                button {
+                    opacity: 1;
+                    padding: 2px 25px;
+                }
+            }
+        }
+    }
+}

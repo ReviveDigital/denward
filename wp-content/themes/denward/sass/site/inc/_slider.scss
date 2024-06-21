@@ -1,0 +1,82 @@
+.slider {
+    position: relative;
+    @include e('img') {
+        width: 100%;
+        height: auto;
+    }
+    @include e('container') {
+        position: relative;
+    }
+}
+.hp {
+    position: relative;
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+    @include e('cta') {
+        background: $color__white;
+        padding: 20px;
+        width: 100%;
+        border-radius: 2px;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.09);
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -50%;
+            transform: translate(0, 50%);
+        }
+    }
+    @include e('container') {
+        @include make-flex($justify:center);
+    }
+    @include e('col') {
+        @include make-col(12);
+        position: relative;
+        text-align: center;
+        @include media-breakpoint-up(md) {
+            @include make-col(3.9);
+            padding-left: 45px;
+            position: relative;
+            &:not(:last-child) {
+                border-right: 2px solid $color__grey;
+            }
+        }
+    }
+    @include e('entry') {
+        position: relative;
+        padding-left: 45px;
+    }
+    @include e('icon') {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        font-size: 30px;
+        color: $color__primary--green;
+    }
+    @include e('heading') {
+        @include heading($color__primary--green,$margin-bottom: 0);
+        line-height: 1.2;
+        font-size: 18px;
+        @include media-breakpoint-up(xl) {
+            font-size: 24px;
+        }
+    }
+    @include e('small') {
+        font-size: 12px;
+        display: block;
+        font-weight: 400;
+        @include media-breakpoint-up(xl) {
+            font-size: 14px;
+        }
+    }
+    @include e('link') {
+        @extend %link;
+        color: $color__primary--green;
+        &:hover {
+            color: $color__primary--green;
+            opacity: 0.7;
+        }
+    }
+}

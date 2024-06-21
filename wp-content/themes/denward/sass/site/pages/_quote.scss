@@ -1,0 +1,137 @@
+.request {
+    padding: 50px 0;
+    @include e('intro') {
+        padding-bottom: 20px;
+        @include default();
+    }
+    form#gform_3 {
+        ul {
+            list-style: none;
+            padding-left: 0;
+             @include make-flex($justify:space-between);
+           li {
+               @include make-col(12);
+               @include media-breakpoint-up(lg) {
+                 @include make-col(5.9);;
+               }
+               label {
+                   display: none;
+               }
+               input, textarea {
+                 @include font();
+                  width: 100%;
+                  padding: 10px;
+                  background: $color__grey;
+                  border: 1px solid $color__field-border;
+                  -webkit-appearance: none;
+                  border-radius: 20px;
+                  &:focus {
+                      outline: none;
+                  }
+                  &::placeholder {
+                      @include font($color__body,14px!important);
+                  }
+               }
+               textarea {
+                   height: 150px;
+               }
+            }
+            li#field_3_6 {
+                @include make-col(12);
+
+            }
+            li#field_3_7 {
+                margin-top: 10px;
+                @include make-col(12);
+                .ginput_container_checkbox {
+                    ul {
+                        list-style: none;
+                        padding-left: 0;
+                        li.gchoice_3_7_1 {
+                            input {
+                                position: relative;
+                                width: auto;
+                                -webkit-appearance: none;
+                            }
+                            label {
+                              display: inline!important;
+                              margin-left: 5px;
+                              @include font($color__body, 14px);
+                          }
+                        }
+                    }
+                }
+                input[type='checkbox'] {
+                    background: none;
+                    box-shadow: none;
+                    border: none;
+                    padding: 0;
+                    &:focus {
+                      box-shadow: none;
+                      outline: none;
+                    }
+                    &:after {
+                      width: 20px;
+                      height: 20px;
+                      top: -2px;
+                      padding: 7px;
+                      left: -1px;
+                      vertical-align: middle;
+                      position: relative;
+                      background: $color__grey;
+                      border: 1px solid $color__field-border;
+                      border-radius: 2px;
+                      content: '';
+                      display: inline-block;
+                      visibility: visible;
+                      cursor: pointer;
+                    }
+                  }
+                  input[type='checkbox']:checked {
+                    &:before {
+                      font-family: 'Font Awesome 5 pro';
+                      font-weight: 600;
+                      content: '\f00c';
+                      position: absolute;
+                      color: $color__primary--green;
+                      z-index: 1;
+                      top: 2px;
+                      left: 4px;
+                      font-size: 12px;
+                    }
+              }
+           }
+           li.gfield_error {
+                input, select {
+                    border: 1px solid $color__red!important;
+                }
+                input#choice_3_7_1 {
+                    border: none!important;
+                }
+                input[type='checkbox']  {
+                      &:after {
+                        border-color: $color__red!important;
+                      }
+                  }
+                  input[type='checkbox']:checked {
+                      &:after {
+                        border-color: $color__grey!important;
+                      }
+                  }
+                .validation_message {
+                    display: none;
+                }
+            }
+         }
+         .validation_error {
+              @include font($color__red);
+          }
+    }
+    .gform_footer {
+        margin-top: 15px;
+        #gform_submit_button_3 {
+            @include button($color__primary--green);
+            border: none;
+        }
+    }
+}

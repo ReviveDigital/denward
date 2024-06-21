@@ -1,0 +1,527 @@
+.slider-landing {
+    border-top: 1px solid $color__grey;
+    @include e('container') {
+        @include make-flex($justify:space-between);
+        display: flex!important;
+    }
+    @include e('block') {
+        @include make-col(12);
+        @include media-breakpoint-up(lg) {
+            @include make-col(5.8);
+            align-self: center;
+        }
+        @include m('text') {
+            margin: 20px 0;
+            @include media-breakpoint-up(md) {
+                margin: 0;
+            }
+        }
+    }
+    @include e('img') {
+        width: 100%;
+    }
+    @include e('btn') {
+        @include button();
+    }
+    @include e('title') {
+        @include heading($line-height: 1.2);
+        @include media-breakpoint-up(md) {
+            font-size: 38px;
+        }
+    }
+    @include e('text') {
+        p {
+            @include font();
+        }
+    }
+}
+.blue-banner {
+    background: $color__primary--blue;
+    padding: 10px;
+    @include e('container') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('block') {
+        @include make-col(12);
+        text-align: center;
+        margin: 10px 0;
+        @include media-breakpoint-up(lg) {
+            @include make-col(2.9);
+        }
+    }
+    @include e('text') {
+        @include font($color__white,$font-weight: 600,$alignment:center,$margin-bottom: 0);
+        font-size: 18px;
+    }
+    @include e('icon') {
+        color: $color__white;
+        text-align: center;
+        opacity: 0.3;
+        font-size: 30px;
+    }
+}
+.icontent {
+    padding: 70px 0;
+    &:nth-child(even) {
+        .icontent__container {
+            flex-direction: row-reverse;
+        }
+    }
+    @include e('blue') {
+        background: $color__primary--blue;
+    }
+    @include e('white') {
+        background: $color__white;
+    }
+    @include e('green') {
+        background: $color__primary--green;
+    }
+    @include e('grey') {
+        background: $color__grey;
+    }
+    @include e('container') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('block') {
+        @include make-col(12);
+        margin: 20px 0;
+        @include media-breakpoint-up(lg) {
+            @include make-col(5.9);
+            align-self: center;
+        }
+    }
+    @include e('text') {
+        @include font();
+        .icontent__blue & {
+            color: $color__white;
+        }
+        .icontent__green & {
+            color: $color__white;
+        }
+    }
+    @include e('heading') {
+        @include heading($margin-bottom: 5px,$line-height: 1.2);
+        .icontent__blue & {
+            color: $color__white;
+        }
+        .icontent__green & {
+            color: $color__white;
+        }
+    }
+    @include e('img') {
+        width: 100%;
+    }
+    @include e('btn') {
+        @include button();
+        .icontent__green & {
+            background: $color__primary--blue;
+        }
+    }
+    iframe {
+        width: 100%;
+        height: 300px;
+        @include media-breakpoint-only(md) {
+            height: 400px;
+        }
+    }
+}
+.carousel {
+    padding: 70px 0;
+    background: $color__grey;
+    @include e('container') {
+        @include make-flex($justify:space-between);
+        margin-bottom: 20px;
+    }
+    @include e('block') {
+        @include make-col(12);
+        align-self: center;
+        @include media-breakpoint-up(md) {
+            @include make-col(7.9);
+        }
+    }
+    @include e('title') {
+        @include heading($margin-bottom: 0);
+    }
+    @include e('content') {
+        p {
+            @include font();
+        }
+    }
+    @include e('arrows') {
+        @include make-col(12);
+        align-self: center;
+        margin: 20px 0;
+        @include media-breakpoint-up(md) {
+            @include make-col(3.9);
+            text-align: right;
+            margin: 0;
+        }
+    }
+    @include e('arrow') {
+        background: $color__white;
+        padding: 10px 16px;
+        color: $color__primary--blue;
+        cursor: pointer;
+        font-size: 20px;
+        @extend %link;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.07);
+        &:hover {
+            background: $color__primary--blue;
+            color: $color__white;
+        }
+        @include m('prev') {
+            margin-right: 10px;
+        }
+    }
+    @include e('img') {
+        background: white;
+        display: block;
+        border-radius: 4px;
+        &:focus {
+            outline: none;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            max-width: 150px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    }
+    @include e('col') {
+        background: white;
+        border-radius: 4px;
+        position: relative;
+    }
+    .slick-slide {
+       margin: 0 5px;
+    }
+    .slick-list {
+       margin: 0 -5px;
+       // display: flex;
+    }
+    @include e('wish') {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        &:focus {
+            outline: none;
+        }
+    }
+    @include e('heart') {
+        background: $color__grey;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 14px;
+        color: $color__body;
+        @extend %link;
+        &:hover {
+            color: $color__primary--blue;
+            font-weight: 600;
+        }
+    }
+    @include e('line') {
+        width: 50%;
+        border-top: 3px solid $color__grey;
+    }
+    @include e('info') {
+        padding: 0 10px;
+    }
+    @include e('item') {
+        @include font($alignment:center,$font-weight: 600,$margin-bottom: 5px);
+    }
+    @include e('entry') {
+        color: $color__body;
+        @extend %link;
+        &:hover {
+            color: $color__body;
+        }
+    }
+    @include e('price') {
+        @include font($color__primary--blue,$alignment:center,$font-weight: 800,$margin-bottom: 3px);
+        del {
+
+        }
+        ins {
+            text-decoration: none;
+            &:before {
+                content: ' ';
+                border-left: 2px solid $color__grey;
+                color: $color__grey;
+                margin: 0 10px 0 5px;
+            }
+            span.amount {
+                color: $color__primary--green;
+            }
+        }
+    }
+    @include e('vat') {
+        @include font($color__vat,$alignment:center);
+        font-size: 12px;
+    }
+    @include e('row') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('btn') {
+        @include make-col(5.9);
+        @include view();
+    }
+    @include e('basket') {
+        @include make-col(5.9);
+        @include basket();
+    }
+    @include e('basket-icon') {
+        max-width: 20px;
+        display: block;
+        margin: 0 auto;
+    }
+    .onsale {
+        background: $color__primary--green;
+        padding: 10px 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        @include font($color__white,$margin-bottom: 0,$font-weight: 600);
+        font-size: 14px;
+    }
+    .slick-track {
+        display: inherit;
+    }
+    a.woocommerce-loop-product__link {
+        position: relative;
+    }
+    .add_to_cart_button {
+        margin-top: 20px;
+        @include font($margin-bottom:0);
+        padding: 15px 20px;
+        background: #172882;
+        text-decoration: none;
+        -webkit-transition: all .4s;
+        -o-transition: all .4s;
+        transition: all .4s;
+        outline: none;
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background: #172882!important;
+        display: inline-block!important;
+        width: 48%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        img {
+            margin: 0 auto;
+        }
+    }
+    @include e('main-img') {
+        width: 200px;
+        height: 200px;
+        -o-object-fit: contain;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+        margin-top: 15px;
+    }
+    @include e('other-product') {
+        background: $color__white;
+        border-radius: 20px;
+    }
+    @include e('content') {
+        @include font();
+    }
+    @include e('other-btn') {
+        @include font($color__white,$alignment:center,$font-weight: 600);
+        margin: 0;
+        padding: 15px 20px;
+        background: #41A528;
+        text-decoration: none;
+        -webkit-transition: all .4s;
+        -o-transition: all .4s;
+        transition: all .4s;
+        outline: none;
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+        background: #41A528!important;
+        &:hover {
+            color: $color__white;
+        }
+    }
+}
+.lquote {
+    padding: 90px 0 70px;
+    background: $color__primary--blue;
+    @include e('container') {
+        @include make-flex($justify:center);
+    }
+    @include e('block') {
+        @include make-col(12);
+        @include media-breakpoint-up(lg) {
+            @include make-col(8);
+        }
+    }
+    @include e('title') {
+        @include heading($color__white,$alignment:center,$margin-bottom: 5px);
+    }
+    @include e('text') {
+        @include font($color__white,$alignment:center);
+    }
+    form {
+        margin-top: 20px;
+        .gform_fields {
+            list-style: none;
+            padding-left: 0;
+            @include make-flex($justify:space-between);
+            .gfield {
+                @include make-col(12);
+                @include media-breakpoint-up(lg) {
+                    @include make-col(3.9);
+                }
+                input, textarea {
+                    @include font($color__white);
+                    width: 100%;
+                    padding: 10px 15px;
+                    background: #f9f9fb47;
+                    border: 1px solid transparent;
+                    -webkit-appearance: none;
+                    border-radius: 20px;
+                    &:focus {
+                        outline: none;
+                    }
+                    &::placeholder {
+                        @include font($color__white,15px!important);
+                    }
+                }
+                label {
+                    display: none;
+                }
+                &#field_4_4 {
+                    @include make-col(12);
+                }
+                &#field_4_5 {
+                    @include make-col(12);
+                }
+                .validation_message {
+                    @include font($color__white);
+                    font-size: 15px;
+                    &:before {
+                        content: '\f06a';
+                        @include solid-icons();
+                        margin-right: 5px;
+                        opacity: 0.4;
+                    }
+                }
+            }
+            #field_4_5 {
+                margin-top: 10px;
+                text-align: center;
+                @include make-col(12);
+                .gfield_label {
+                    display: none;
+                }
+                .gchoice_4_5_1 {
+                    @include make-col(12);
+                    input {
+                        position: relative;
+                        width: auto;
+                        -webkit-appearance: none;
+                    }
+                    label {
+                      display: inline!important;
+                      margin-left: 5px;
+                      @include font($color__white, 15px);
+                  }
+                }
+                input[type='checkbox'] {
+                    background: none;
+                    box-shadow: none;
+                    border: none;
+                    padding: 0;
+                    &:focus {
+                      box-shadow: none;
+                      outline: none;
+                    }
+                    &:after {
+                      width: 20px;
+                      height: 20px;
+                      top: -2px;
+                      padding: 7px;
+                      left: -1px;
+                      vertical-align: middle;
+                      position: relative;
+                      background: $color__grey;
+                      border: 1px solid $color__field-border;
+                      border-radius: 2px;
+                      content: '';
+                      display: inline-block;
+                      visibility: visible;
+                      cursor: pointer;
+                    }
+                  }
+                  input[type='checkbox']:checked {
+                    &:before {
+                      font-family: 'Font Awesome 5 pro';
+                      font-display: swap;
+                      font-weight: 600;
+                      content: '\f00c';
+                      position: absolute;
+                      color: $color__primary--green;
+                      z-index: 1;
+                      top: 2px;
+                      left: 4px;
+                      font-size: 12px;
+                    }
+              }
+           }
+            .gfield_error {
+                 input, select {
+                     border: 1px solid $color__red!important;
+                 }
+                 input#gchoice_4_5_1 {
+                     border: none!important;
+                 }
+                 input[type='checkbox']  {
+                     border: none!important;
+                       &:after {
+                         border-color: $color__red!important;
+                       }
+                   }
+                   input[type='checkbox']:checked {
+                       &:after {
+                         border-color: $color__grey!important;
+                       }
+                   }
+                   #validation_message_4_5 {
+                       text-align: center;
+                   }
+                 .validation_message {
+                     @include font($color__white);
+                     font-size: 15px;
+                 }
+             }
+        }
+    }
+    .gform_footer {
+        text-align: center;
+    }
+    .gform_submission_error  {
+        display: none;
+    }
+    #gform_submit_button_4 {
+         @include button();
+         border: none;
+    }
+}

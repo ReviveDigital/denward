@@ -1,0 +1,50 @@
+.notices {
+    padding: 20px 0 20px;
+    @include e('success') {
+        background: $color__primary--green;
+        padding: 10px;
+        border-radius: 5px;
+        @include font($color__white,$margin-bottom: 0);
+        position: relative;
+        padding-left: 31px;
+        &:before {
+            content: '\f058';
+            @include solid-icons();
+            margin-right: 3px;
+            vertical-align: middle;
+            font-size: 18px;
+            position: absolute;
+            left: 7px;
+            top: 51%;
+            transform: translate(0, -50%);
+        }
+        a {
+            color: $color__white;
+            @extend %link;
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                color: $color__white;
+                opacity: 0.7;
+            }
+        }
+    }
+    @include e('error') {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    @include e('error-item') {
+        @include font($color__red);
+        a {
+            color: $color__red;
+            @extend %link;
+            text-decoration: underline;
+            &:hover {
+                opacity: 0.7;
+                text-decoration: underline;
+            }
+        }
+    }
+}

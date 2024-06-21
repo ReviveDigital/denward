@@ -1,0 +1,110 @@
+.options {
+    background: $color__grey;
+    padding: 60px 0 40px;
+    @include media-breakpoint-up(lg) {
+        padding: 100px 0 40px;
+    }
+    @include e('container') {
+        @include make-flex();
+    }
+    @include e('block') {
+        @include make-col(12);
+        margin-bottom: 20px;
+        @include media-breakpoint-only(sm) {
+            margin-right: 11px;
+            @include make-col(5.8);
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
+        @include media-breakpoint-only(md) {
+            margin-right: 11px;
+            @include make-col(5.8);
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            margin-right: 11px;
+            @include make-col(3.9);
+            margin-right: 8px;
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+        }
+        @include media-breakpoint-up(xl) {
+            margin-right: 13px;
+        }
+        @include m('img') {
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 2px;
+                z-index: 1;
+                background: linear-gradient(to right, #061252, rgba(6, 18, 82, 0.85), rgba(6, 18, 82, 0.66));
+            }
+        }
+    }
+    @include e('cta-img') {
+        width: 100%;
+        height: 100%;
+    }
+    @include e('content') {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80%;
+        z-index: 11;
+    }
+    @include e('cta') {
+        @include heading($color__white,$margin-bottom: 0);
+    }
+    @include e('text') {
+        @include font($color__white);
+    }
+    @include e('phone') {
+        @extend %link;
+        color: $color__white;
+        font-size: 20px;
+        font-weight: 600;
+        &:hover {
+            color: $color__white;
+            opacity: 0.7;
+        }
+    }
+    @include e('img') {
+        width: 100%;
+        border-radius: 2px;
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+    }
+    @include e('title') {
+        padding: 15px;
+        @extend %link;
+        background: $color__white;
+        @include subheading($alignment:center,$margin-bottom: 0);
+        margin-top: 10px;
+        font-size: 16px;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.03);
+    }
+    @include e('link') {
+        @extend %link;
+        @include m('white') {
+            background: $color__white;
+            display: block;
+        }
+        &:hover {
+            .options__title {
+                background: $color__primary--blue;
+                color: $color__white;
+            }
+        }
+    }
+}

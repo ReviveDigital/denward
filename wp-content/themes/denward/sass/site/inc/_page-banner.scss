@@ -1,0 +1,63 @@
+.hero {
+    @include e('img') {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 50px 0;
+        position: relative;
+        @include media-breakpoint-up(lg) {
+            padding: 70px 0;
+        }
+        // &:after {
+        //     content: '';
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     z-index: 1;
+        //     background: linear-gradient(to left, #061252, #061252de, #061252bd);
+        // }
+    }
+    @include e('container') {
+        @include make-flex();
+    }
+    @include e('block') {
+        @include make-col(12);
+        z-index: 111;
+        @include media-breakpoint-up(lg) {
+            @include make-col(9);
+        }
+        span {
+            @include font($color__white);
+            a {
+                color: $color__white;
+                @extend %link;
+                &:hover {
+                    color: $color__white;
+                    opacity: 0.5;
+                }
+            }
+        }
+        .woocommerce-breadcrumb {
+            @include font($color__white);
+            a {
+                color: $color__white;
+                @extend %link;
+                &:hover {
+                    color: $color__white;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+    @include e('title') {
+        @include heading($color__white,$margin-bottom: 5px);
+        @include m('size') {
+            font-size: 27px;
+            @include media-breakpoint-up(lg) {
+                font-size: 36px;
+            }
+        }
+    }
+}

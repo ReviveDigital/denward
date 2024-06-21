@@ -1,0 +1,80 @@
+.reviews {
+    padding: 50px 0;
+    background: $color__primary--blue;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+        padding: 50px 0 150px;
+    }
+    @include e('container') {
+        @include make-flex($justify:space-between);
+    }
+    @include e('block') {
+        @include make-col(12);
+        @include media-breakpoint-up(lg) {
+            @include make-col(7.9);
+        }
+        @include m('about') {
+            @include make-col(12);
+            align-self: center;
+            @include media-breakpoint-up(lg) {
+                @include make-col(3.9);
+            }
+        }
+        @include m('reviews') {
+            background: $color__white;
+            border-radius: 4px;
+            padding: 30px;
+            margin-top: 20px;
+            @include media-breakpoint-up(lg) {
+                border-radius: 27px;
+                align-self: center;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                position: absolute;
+                margin-top: 0;
+                right: 0;
+                width: 50%;
+                overflow: hidden;
+            }
+        }
+    }
+    @include e('title') {
+        @include heading($color__white,$margin-bottom: 5px);
+    }
+    @include e('subtitle') {
+        @include subheading($color__white,$font-weight: 200);
+        font-style: italic;
+    }
+    @include e('content') {
+        p {
+            @include font($color__white);
+        }
+    }
+    @include e('heading') {
+        @include heading();
+    }
+    @include e('review') {
+        p {
+            @include font($color__review);
+            font-style: italic;
+            @include media-breakpoint-up(lg) {
+                font-size: 18px;
+            }
+        }
+    }
+    @include e('client') {
+        @include font($color__primary--blue,$font-weight: 600);
+        display: inline-block;
+    }
+    @include e('stars') {
+        list-style: none;
+        margin-bottom: 0;
+        display: inline-block;
+    }
+    @include e('icon') {
+        color: $color__primary--green;
+        &:not(:last-child) {
+            margin-right: 3px;
+        }
+     }
+}
